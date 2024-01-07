@@ -1,0 +1,660 @@
+[
+    {
+        "id": "a1501e5d416643b1",
+        "type": "tab",
+        "label": "Basic Flow",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "f82077b377f2ffb7",
+        "type": "tab",
+        "label": "Menggunakan Fucntion Node",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "4e705d5c78506582",
+        "type": "tab",
+        "label": "Menggunakan Switch Node",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "bb6df58588e7cba3",
+        "type": "tab",
+        "label": "Menggunakan JSON Parsing",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "9ffe5be7ecda7ca0",
+        "type": "tab",
+        "label": "Pertanyaan dan Tugas",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2ead3f660277f2d4",
+        "type": "inject",
+        "z": "a1501e5d416643b1",
+        "name": "Input",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "test",
+        "payload": "Hello World",
+        "payloadType": "str",
+        "x": 110,
+        "y": 220,
+        "wires": [
+            [
+                "3059bf83f8a39a51"
+            ]
+        ]
+    },
+    {
+        "id": "3059bf83f8a39a51",
+        "type": "debug",
+        "z": "a1501e5d416643b1",
+        "name": "Output",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 290,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "a1a30f2c1a18559a",
+        "type": "inject",
+        "z": "f82077b377f2ffb7",
+        "name": "Input",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "test1",
+        "payload": "Hello World",
+        "payloadType": "str",
+        "x": 110,
+        "y": 220,
+        "wires": [
+            [
+                "138c1d894ab589e1"
+            ]
+        ]
+    },
+    {
+        "id": "138c1d894ab589e1",
+        "type": "function",
+        "z": "f82077b377f2ffb7",
+        "name": "Fungsi",
+        "func": "var topic = msg.topic;\nif (topic == \"test1\"){\n    return [msg, null];\n}\nif (topic == \"test2\") {\n    return [msg, null];\n}\nreturn msg;",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 240,
+        "wires": [
+            [
+                "9c737d5c6e05f44d",
+                "f99d94b127459166"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "9c737d5c6e05f44d",
+        "type": "debug",
+        "z": "f82077b377f2ffb7",
+        "name": "Output 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "0b0a4530a18d3d56",
+        "type": "inject",
+        "z": "f82077b377f2ffb7",
+        "name": "Input 2",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "test2",
+        "payload": "Expeliarmus",
+        "payloadType": "str",
+        "x": 110,
+        "y": 280,
+        "wires": [
+            [
+                "138c1d894ab589e1"
+            ]
+        ]
+    },
+    {
+        "id": "f99d94b127459166",
+        "type": "debug",
+        "z": "f82077b377f2ffb7",
+        "name": "Output 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "f1c0fd96abb31477",
+        "type": "inject",
+        "z": "4e705d5c78506582",
+        "name": "30",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "test1",
+        "payload": "30",
+        "payloadType": "num",
+        "x": 310,
+        "y": 160,
+        "wires": [
+            [
+                "e54807016a659d3b"
+            ]
+        ]
+    },
+    {
+        "id": "e4bd29356d6be696",
+        "type": "inject",
+        "z": "4e705d5c78506582",
+        "name": "27",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "test2",
+        "payload": "27",
+        "payloadType": "num",
+        "x": 310,
+        "y": 260,
+        "wires": [
+            [
+                "e54807016a659d3b"
+            ]
+        ]
+    },
+    {
+        "id": "e54807016a659d3b",
+        "type": "switch",
+        "z": "4e705d5c78506582",
+        "name": "Switch",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "28",
+                "vt": "str"
+            },
+            {
+                "t": "lte",
+                "v": "28",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 470,
+        "y": 220,
+        "wires": [
+            [
+                "7060e28b7dd9fb65"
+            ],
+            [
+                "e00c7483ce2bf55c"
+            ]
+        ]
+    },
+    {
+        "id": "7060e28b7dd9fb65",
+        "type": "debug",
+        "z": "4e705d5c78506582",
+        "name": ">28",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 630,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "e00c7483ce2bf55c",
+        "type": "debug",
+        "z": "4e705d5c78506582",
+        "name": "<=28",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 630,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "e72e1c777d4cb98b",
+        "type": "inject",
+        "z": "bb6df58588e7cba3",
+        "name": "v1",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "/sensor",
+        "payload": "{\"temp\":27,\"humidity\":50,\"air\":27}",
+        "payloadType": "json",
+        "x": 110,
+        "y": 220,
+        "wires": [
+            [
+                "8a16df6d6c0b362c"
+            ]
+        ]
+    },
+    {
+        "id": "8a16df6d6c0b362c",
+        "type": "json",
+        "z": "bb6df58588e7cba3",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 290,
+        "y": 220,
+        "wires": [
+            [
+                "81c9099cad2fb479"
+            ]
+        ]
+    },
+    {
+        "id": "81c9099cad2fb479",
+        "type": "function",
+        "z": "bb6df58588e7cba3",
+        "name": "function 1",
+        "func": "var obj = msg.payload;\nmsg.payolad = obj.temperature;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 220,
+        "wires": [
+            [
+                "a959434c286d40b8"
+            ]
+        ]
+    },
+    {
+        "id": "a959434c286d40b8",
+        "type": "debug",
+        "z": "bb6df58588e7cba3",
+        "name": "msg.payload",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 670,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "aa60b5d463634925",
+        "type": "inject",
+        "z": "9ffe5be7ecda7ca0",
+        "name": "String",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "test1",
+        "payload": "Hello world",
+        "payloadType": "str",
+        "x": 150,
+        "y": 180,
+        "wires": [
+            [
+                "1db09436298a910d"
+            ]
+        ]
+    },
+    {
+        "id": "36e089ab3703ab4d",
+        "type": "inject",
+        "z": "9ffe5be7ecda7ca0",
+        "name": "Boolean",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "test2",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 160,
+        "y": 240,
+        "wires": [
+            [
+                "1db09436298a910d"
+            ]
+        ]
+    },
+    {
+        "id": "96351ebc374af8dd",
+        "type": "inject",
+        "z": "9ffe5be7ecda7ca0",
+        "name": "Json",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "/sensor",
+        "payload": "{\"voltage\":5,\"current\":1,\"resistance\":220}",
+        "payloadType": "json",
+        "x": 150,
+        "y": 360,
+        "wires": [
+            [
+                "25f7739e4b1de066"
+            ]
+        ]
+    },
+    {
+        "id": "3a105e69acd257ca",
+        "type": "inject",
+        "z": "9ffe5be7ecda7ca0",
+        "name": "Number",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "test3",
+        "payload": "1001",
+        "payloadType": "num",
+        "x": 150,
+        "y": 300,
+        "wires": [
+            [
+                "1db09436298a910d"
+            ]
+        ]
+    },
+    {
+        "id": "1db09436298a910d",
+        "type": "switch",
+        "z": "9ffe5be7ecda7ca0",
+        "name": "Switch",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Hello world",
+                "vt": "str"
+            },
+            {
+                "t": "true"
+            },
+            {
+                "t": "eq",
+                "v": "1001",
+                "vt": "num"
+            },
+            {
+                "t": "cont",
+                "v": "{\"voltage\":5,\"current\":1,\"resistance\":220}",
+                "vt": "jsonata"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 4,
+        "x": 470,
+        "y": 260,
+        "wires": [
+            [
+                "05d0e86f4f849b79"
+            ],
+            [
+                "a91b307fe7d4a81c"
+            ],
+            [
+                "3b780dd1be77c092"
+            ],
+            [
+                "7a3dfa1b415afe50"
+            ]
+        ]
+    },
+    {
+        "id": "05d0e86f4f849b79",
+        "type": "debug",
+        "z": "9ffe5be7ecda7ca0",
+        "name": "String",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 710,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "a91b307fe7d4a81c",
+        "type": "debug",
+        "z": "9ffe5be7ecda7ca0",
+        "name": "Boolean",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "3b780dd1be77c092",
+        "type": "debug",
+        "z": "9ffe5be7ecda7ca0",
+        "name": "Number",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "25f7739e4b1de066",
+        "type": "function",
+        "z": "9ffe5be7ecda7ca0",
+        "name": "function 2",
+        "func": "var obj = msg.payload;\nmsg.payolad = obj.battery;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 360,
+        "wires": [
+            [
+                "1db09436298a910d"
+            ]
+        ]
+    },
+    {
+        "id": "7a3dfa1b415afe50",
+        "type": "debug",
+        "z": "9ffe5be7ecda7ca0",
+        "name": "Json",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 730,
+        "y": 380,
+        "wires": []
+    }
+]
